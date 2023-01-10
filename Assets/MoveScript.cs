@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveScript : MonoBehaviour
 {
     public float moveSpeed = 0.01f;
-    public float deadZone = -0.6f;
+    public float deadZone = -10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +18,6 @@ public class MoveScript : MonoBehaviour
         transform.position = transform.position + (Vector3.left * moveSpeed);
 
         if(transform.position.x < deadZone) {
-            Debug.Log("Destroying");
             Destroy(gameObject);
         }
     }
